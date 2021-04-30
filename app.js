@@ -2,44 +2,79 @@ const app = new Vue({
 
     el: "#appContainer",
     data: {
-        imgSource: "img/illustration__0004_14_fox.jpg",
+
         illustrations: [
             {
-                indice: 1,
-                imgSource: "img/illustration__0004_14_fox.jpg"
+                title: "Kitsune Witch",
+                imgSource: "img/illustration__0004_14_fox.jpg",
+                created: "1 ottobre 2020",
             },
             {
-                indice: 2,
-                imgSource: "img/illustration__0005_11_Bones-snake.jpg"
+                title: "Bones Witch",
+                imgSource: "img/illustration__0005_11_Bones-snake.jpg",
+                created: "31 ottobre 2020",
             },
             {
-                indice: 3,
-                imgSource: "img/illustration__0006_10_Artist.jpg"
+                title: "Artist Witch",
+                imgSource: "img/illustration__0006_10_Artist.jpg",
+                created: "14 ottobre 2020",
             },
             {
-                indice: 4,
-                imgSource: "img/illustration__lantern.jpg"
+                title: "Lumus Witch",
+                imgSource: "img/illustration__lantern.jpg",
+                created: "24 ottobre 2020",
             },
             {
-                indice: 5,
-                imgSource: "img/illustration__0000_sophia-lowres.jpg"
+                title: "Pink universe",
+                imgSource: "img/illustration__0000_sophia-lowres.jpg",
+                created: "04 aprile 2020",
             },
             {
-                indice: 6,
-                imgSource: "img/illustration__0001_July_.jpg"
+                title: "Casual portrait",
+                imgSource: "img/illustration__0001_July_.jpg",
+                created: "19 luglio 2020",
             },
             {
-                indice: 7,
-                imgSource: "img/illustration__0002_Black-Lady_fullcolor-min.jpg"
+                title: "Black Lady",
+                imgSource: "img/illustration__0002_Black-Lady_fullcolor-min.jpg",
+                created: "30 agosto 2020",
             },
         ],
 
-
-
+        activeImg: 0,
     },
     methods: {
-        onDotClick(event) {
-            this.imgSource = event.imgSource;
-        }
+        onDotClick(index) {
+
+            this.activeImg = index;
+            console.log(this.illustrations.length)
+        },
+        nextImg() {
+            const arrayLength = this.illustrations.length;
+            
+            if (this.activeImg < (arrayLength-1) && this.activeImg >= 0) {
+                this.activeImg++;
+
+            } else if (this.activeImg = arrayLength) {
+                this.activeImg = 0;
+            }
+
+           
+            console.log(this.activeImg)
+        },
+        prevImg() {
+            const arrayLength = this.illustrations.length;
+
+            if (this.activeImg <= arrayLength && this.activeImg > 0) {
+                this.activeImg--;
+
+            } else if (this.activeImg === 0) {
+                this.activeImg = arrayLength;
+            }
+            console.log(this.activeImg)
+        },
+        
+
     },
+
 });

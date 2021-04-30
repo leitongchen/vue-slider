@@ -14,26 +14,30 @@
     <main>
         <div id="appContainer">
             <div class="slider-container">
-                <div class="arrow-container">
+                <div class="arrow-container" v-on:click="prevImg">
                     <i class="fas fa-arrow-alt-circle-left"></i>
+                    {{activeImg}}
                 </div>
 
                 <div class="img-container">
-                    <img :src="imgSource" alt="">
+                    <img :src="illustrations[activeImg].imgSource" alt="">
 
                     <div class="dots-container">
                         <div class="dot dot-empty" v-for="(illustration, index) in illustrations" :key="illustration.id"
-                            @click="onDotClick(illustration)">
+                            @click="onDotClick(index)">
                             <!-- {{illustration.imgSource}}
                             {{index}} -->
                         </div>
                     </div>
                 </div>
 
-                <div class="arrow-container">
+                <div class="arrow-container" v-on:click="nextImg">
                     <i class="fas fa-arrow-alt-circle-right"></i>
+                    {{activeImg}}
                 </div>
             </div>
+            <h4> Titolo: {{ illustrations[activeImg].title }} </h4>
+            <p>Data di creazione {{ illustrations[activeImg].created }} </p>
         </div>
     </main>
     <script src="app.js"></script>
