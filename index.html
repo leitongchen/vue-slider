@@ -19,11 +19,14 @@
                 </div>
 
                 <div class="img-container">
-                    <img src="img/illustration__0004_14_fox.jpg" alt="">
+                    <img :src="imgSource" alt="">
 
                     <div class="dots-container">
-                        <div class="dot"></div>
-
+                        <div class="dot dot-empty" v-for="(illustration, index) in illustrations" :key="illustration.id"
+                            @click="onDotClick(illustration)">
+                            <!-- {{illustration.imgSource}}
+                            {{index}} -->
+                        </div>
                     </div>
                 </div>
 
