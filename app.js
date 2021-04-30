@@ -1,8 +1,8 @@
 const app = new Vue({
 
-    el: "",
+    el: "#appContainer",
     data: {
-
+        ciao: 'ciao',
     },
     methods: {
 
