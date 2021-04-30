@@ -13,6 +13,7 @@
 <body>
     <main>
         <div id="appContainer">
+            <h1 class="text-center"> {{ illustrations[activeImg].title }} </h1>
             <div class="slider-container">
                 <div class="arrow-container" v-on:click="prevImg">
                     <i class="fas fa-arrow-alt-circle-left"></i>
@@ -20,7 +21,10 @@
                 </div>
 
                 <div class="img-container">
-                    <img :src="illustrations[activeImg].imgSource" alt="">
+                    <img :src="illustrations[activeImg].imgSource" alt="" :class="firstLast()">
+                    {{illustrations.length-1}}
+                    <!-- {{illustrations[activeImg]}} -->
+                    {{illustrations[activeImg] === 0}}
 
                     <div class="dots-container">
                         <div class="dot" 
@@ -39,8 +43,19 @@
                     {{activeImg}}
                 </div>
             </div>
-            <h4> Titolo: {{ illustrations[activeImg].title }} </h4>
-            <p>Data di creazione {{ illustrations[activeImg].created }} </p>
+            
+            <ul class="text-center">
+                <li>
+                    Data di creazione {{ illustrations[activeImg].created }} 
+                </li>
+                <li>
+                    Tipo {{ illustrations[activeImg].type }} 
+                </li>
+                <li>
+                    Tools {{ illustrations[activeImg].usedTool }} 
+                </li>
+            </ul>
+
         </div>
     </main>
     <script src="app.js"></script>
