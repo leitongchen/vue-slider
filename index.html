@@ -23,8 +23,11 @@
                     <img :src="illustrations[activeImg].imgSource" alt="">
 
                     <div class="dots-container">
-                        <div class="dot dot-empty" v-for="(illustration, index) in illustrations" :key="illustration.id"
-                            @click="onDotClick(index)">
+                        <div class="dot" 
+                            v-for="(illustration, index) in illustrations" 
+                            :key="illustration.id"
+                            @click="onDotClick(index)"
+                            v-bind:class="{'dot-active': dotIsActive(index)}">
                             <!-- {{illustration.imgSource}}
                             {{index}} -->
                         </div>

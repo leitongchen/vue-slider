@@ -42,20 +42,21 @@ const app = new Vue({
         ],
 
         activeImg: 0,
+
     },
     methods: {
         onDotClick(index) {
 
             this.activeImg = index;
-            console.log(this.illustrations.length)
+        
         },
         nextImg() {
-            const arrayLength = this.illustrations.length;
+            const arrayLength = this.illustrations.length-1;
             
-            if (this.activeImg < (arrayLength-1) && this.activeImg >= 0) {
+            if (this.activeImg < arrayLength && this.activeImg >= 0) {
                 this.activeImg++;
 
-            } else if (this.activeImg = arrayLength) {
+            } else if (this.activeImg === arrayLength) {
                 this.activeImg = 0;
             }
 
@@ -63,7 +64,7 @@ const app = new Vue({
             console.log(this.activeImg)
         },
         prevImg() {
-            const arrayLength = this.illustrations.length;
+            const arrayLength = this.illustrations.length-1;
 
             if (this.activeImg <= arrayLength && this.activeImg > 0) {
                 this.activeImg--;
@@ -73,7 +74,11 @@ const app = new Vue({
             }
             console.log(this.activeImg)
         },
-        
+        dotIsActive(index) {
+            if (this.activeImg === index) {
+                return true;
+            }
+        }
 
     },
 

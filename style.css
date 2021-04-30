@@ -11,12 +11,13 @@ main {
 .slider-container {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
 }
 
 
 /* PARTE CENTRALE IMG */
 .img-container {
-    max-width: 100%;
+    max-width: 60%;
 
     flex-basis: 200px;
     flex-grow: 2;
@@ -51,16 +52,21 @@ main {
 
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .dot {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: 50%; 
     border: 3px solid rgb(255, 255, 255);
+}
 
+
+.dot-active {
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
 }
 
 
