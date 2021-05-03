@@ -101,15 +101,15 @@ const app = new Vue({
             }
 
         },
-        onKeyPress() {
-            console.log(`key press`)
-
-        }
 
     },
     mounted() {
         // evento keyup funziona su elementi con focus. Si può impostare su mounted così prima viene eseguito il resto del codice. 
         document.querySelector(".slider-container").focus()
+
+        setInterval(() => {
+            this.nextImg();
+        }, 3000)
     }
 });
 
