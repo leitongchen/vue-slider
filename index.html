@@ -11,10 +11,10 @@
     <title>Slider</title>
 </head>
 <body>
-    <main>
+    <main v-on:keyup.enter="nextImg">
         <div id="appContainer">
             <h1 class="text-center"> {{ illustrations[activeImg].title }} </h1>
-            <div class="slider-container">
+            <div class="slider-container" tabindex="-1" @keyup.left="prevImg" @keyup.right="nextImg">
                 <div class="arrow-container" v-on:click="prevImg">
                     <i class="fas fa-arrow-alt-circle-left"></i>
                     {{activeImg}}
@@ -22,10 +22,7 @@
 
                 <div class="img-container">
                     <img :src="illustrations[activeImg].imgSource" alt="" :class="firstLast()">
-                    {{illustrations.length-1}}
-                    <!-- {{illustrations[activeImg]}} -->
-                    {{illustrations[activeImg] === 0}}
-
+                
                     <div class="dots-container">
                         <div class="dot" 
                             v-for="(illustration, index) in illustrations" 

@@ -61,11 +61,11 @@ const app = new Vue({
     methods: {
         onDotClick(index) {
             this.activeImg = index;
-        
+
         },
         nextImg() {
-            const arrayLength = this.illustrations.length-1;
-            
+            const arrayLength = this.illustrations.length - 1;
+
             if (this.activeImg < arrayLength && this.activeImg >= 0) {
                 this.activeImg++;
 
@@ -73,11 +73,11 @@ const app = new Vue({
                 this.activeImg = 0;
             }
 
-           
+
             console.log(this.activeImg)
         },
         prevImg() {
-            const arrayLength = this.illustrations.length-1;
+            const arrayLength = this.illustrations.length - 1;
 
             if (this.activeImg <= arrayLength && this.activeImg > 0) {
                 this.activeImg--;
@@ -95,13 +95,22 @@ const app = new Vue({
         firstLast() {
             if (this.activeImg === 0) {
                 return "first-img'"
-            
-            } else if (this.activeImg === this.illustrations.length-1) {
+
+            } else if (this.activeImg === this.illustrations.length - 1) {
                 return "last-img"
-            } 
+            }
+
+        },
+        onKeyPress() {
+            console.log(`key press`)
 
         }
 
     },
-
+    mounted() {
+        // evento keyup funziona su elementi con focus. Si può impostare su mounted così prima viene eseguito il resto del codice. 
+        document.querySelector(".slider-container").focus()
+    }
 });
+
+
