@@ -16,6 +16,11 @@ main {
     margin: 20px 0;
 }
 
+.slider-container:focus,
+.slider-container:active {
+    outline: none;
+}
+
 
 /* PARTE CENTRALE IMG */
 .img-container {

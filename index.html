@@ -17,7 +17,6 @@
             <div class="slider-container" tabindex="-1" @keyup.left="prevImg" @keyup.right="nextImg">
                 <div class="arrow-container" v-on:click="prevImg">
                     <i class="fas fa-arrow-alt-circle-left"></i>
-                    {{activeImg}}
                 </div>
 
                 <div class="img-container">
@@ -37,7 +36,6 @@
 
                 <div class="arrow-container" v-on:click="nextImg">
                     <i class="fas fa-arrow-alt-circle-right"></i>
-                    {{activeImg}}
                 </div>
             </div>
             
